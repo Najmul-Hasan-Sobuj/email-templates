@@ -3,301 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your ShopSmart Order Confirmation</title>
-    
-    <!-- Enhanced Font Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;700&display=swap">
-    
+    <title>Order Confirmation</title>
     <style>
-        :root {
-            /* Expanded Color Palette */
-            --color-primary: #2c3e50;
-            --color-secondary: #3498db;
-            --color-success: #2ecc71;
-            --color-warning: #f39c12;
-            --color-error: #e74c3c;
-            
-            --color-background-light: #f9fafb;
-            --color-background-dark: #f1f3f5;
-            --color-border: #e9ecef;
-            
-            --color-text-primary: #2c3e50;
-            --color-text-secondary: #6c757d;
-            
-            /* Advanced Typography */
-            --font-primary: 'Inter', sans-serif;
-            --font-accent: 'Montserrat', sans-serif;
-            
-            /* Sophisticated Spacing System */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 0.75rem;
-            --spacing-md: 1rem;
-            --spacing-lg: 1.5rem;
-            --spacing-xl: 2rem;
-            
-            /* Enhanced Shadows and Elevations */
-            --shadow-subtle: 0 2px 4px rgba(0,0,0,0.06);
-            --shadow-medium: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-strong: 0 10px 20px rgba(0,0,0,0.12);
-        }
-        
-        /* Comprehensive Reset and Base Styles */
-        *,
-        *::before,
-        *::after {
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            color: #333;
         }
-        
-        body {
-            font-family: var(--font-primary);
-            line-height: 1.6;
-            color: var(--color-text-primary);
-            background-color: var(--color-background-light);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        /* User-Centric Container Design */
-        .order-confirmation {
+        .email-container {
             max-width: 800px;
-            margin: 2rem auto;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: var(--shadow-strong);
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
             overflow: hidden;
-            border: 1px solid var(--color-border);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e5e5;
         }
-        
-        /* Header with Improved Hierarchy */
-        .order-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: var(--spacing-lg);
-            background-color: var(--color-background-dark);
-            border-bottom: 1px solid var(--color-border);
+        .email-header {
+            background: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
-        
-        .logo {
-            font-family: var(--font-accent);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            letter-spacing: -0.05em;
+        .email-header img {
+            max-width: 150px;
+            margin-bottom: 10px;
         }
-        
-        .order-meta {
-            text-align: right;
-            color: var(--color-text-secondary);
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
         }
-        
-        .order-status {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            background-color: var(--color-success);
-            color: white;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
+        .email-content {
+            padding: 20px;
+            line-height: 1.6;
         }
-        
-        /* Detailed Grid Sections */
-        .order-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            padding: var(--spacing-lg);
-        }
-        
-        .info-card {
-            background-color: var(--color-background-dark);
-            border-radius: 8px;
-            padding: var(--spacing-md);
-            box-shadow: var(--shadow-subtle);
-            transition: transform 0.2s ease;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-title {
-            font-family: var(--font-accent);
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-            border-bottom: 2px solid var(--color-secondary);
-            padding-bottom: 0.25rem;
-        }
-        
-        /* Enhanced Product Table */
-        .product-table {
+        table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: var(--spacing-lg) 0;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
-        
-        .product-table thead {
-            background-color: var(--color-background-dark);
+        table, th, td {
+            border: 1px solid #ddd;
         }
-        
-        .product-table th,
-        .product-table td {
-            padding: var(--spacing-sm);
-            border-bottom: 1px solid var(--color-border);
+        th, td {
+            padding: 10px;
             text-align: left;
+            font-size: 14px;
         }
-        
-        .product-total {
-            font-weight: 600;
-            color: var(--color-secondary);
+        th {
+            background-color: #f1f1f1;
         }
-        
-        /* Financial Summary */
-        .financial-summary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            padding: var(--spacing-lg);
-            background-color: var(--color-background-dark);
+        .summary {
+            margin-top: 20px;
         }
-        
-        .summary-section {
-            background-color: white;
+        .summary p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .coupon {
+            background-color: #f8f8f8;
+            border: 1px dashed #007BFF;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
             border-radius: 8px;
-            padding: var(--spacing-md);
-            box-shadow: var(--shadow-subtle);
         }
-        
-        .total-amount {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-secondary);
+        .coupon p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
         }
-        
-        /* Responsive Adjustments */
-        @media screen and (max-width: 600px) {
-            .order-header,
-            .order-details,
-            .financial-summary {
-                grid-template-columns: 1fr;
+        .coupon-code {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007BFF;
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            background: #f4f4f4;
+            padding: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 12px;
             }
-            
-            .order-meta {
-                text-align: left;
-                margin-top: var(--spacing-sm);
+            .btn {
+                padding: 10px 15px;
+                font-size: 14px;
             }
-        }
-        
-        /* Utility Classes */
-        .text-muted {
-            color: var(--color-text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        .highlight {
-            color: var(--color-secondary);
-            font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <div class="order-confirmation">
-        <!-- Enhanced Header -->
-        <header class="order-header">
-            <div class="logo">ShopSmart</div>
-            <div class="order-meta">
-                <strong>Order Confirmation</strong>
-                <div>Order #SS-2024-12345</div>
-                <div class="order-status">Processing</div>
-            </div>
-        </header>
-        
-        <!-- Detailed Customer & Shipping Information -->
-        <section class="order-details">
-            <div class="info-card">
-                <h3 class="card-title">Customer Profile</h3>
-                <p><strong>John Doe</strong></p>
-                <p class="text-muted">Customer ID: <span class="highlight">CS-98765</span></p>
-                <p>📧 john.doe@email.com</p>
-                <p>📱 (555) 123-4567</p>
-                <p>🏆 Loyalty Tier: <span class="highlight">Silver Member</span></p>
-            </div>
-            
-            <div class="info-card">
-                <h3 class="card-title">Shipping Details</h3>
-                <p><strong>Delivery Address</strong></p>
-                <p>123 Main Street</p>
-                <p>Anytown, State 12345</p>
-                <p>🚚 Carrier: ShopSmart Logistics</p>
-                <p>🔍 Tracking: <span class="highlight">SS-TRACK-9876</span></p>
-                <p>📦 Estimated Delivery: Dec 22, 2024</p>
-            </div>
-        </section>
-        
-        <!-- Product Table -->
-        <table class="product-table">
-            <thead>
+    <div class="email-container">
+        <div class="email-header">
+            <img src="[Company Logo URL]" alt="Company Logo">
+            <h1>Order Confirmation</h1>
+        </div>
+        <div class="email-content">
+            <p>Hi <strong>[Customer Name]</strong>,</p>
+            <p>Thank you for your order! We’re excited to have you as a customer. Below are the details of your purchase:</p>
+
+            <h3>Order Information</h3>
+            <table>
                 <tr>
-                    <th>Product</th>
-                    <th>SKU</th>
-                    <th>Quantity</th>
-                    <th>Unit Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Wireless Noise-Cancelling Headphones</td>
-                    <td>SS-AUDIO-001</td>
-                    <td>1</td>
-                    <td>$249.99</td>
-                    <td class="product-total">$249.99</td>
+                    <th>Order ID</th>
+                    <td>[Order ID]</td>
                 </tr>
                 <tr>
-                    <td>Portable Bluetooth Speaker</td>
-                    <td>SS-AUDIO-002</td>
-                    <td>2</td>
-                    <td>$79.50</td>
-                    <td class="product-total">$159.00</td>
+                    <th>Order Date</th>
+                    <td>[Order Date]</td>
                 </tr>
-            </tbody>
-        </table>
-        
-        <!-- Financial Summary -->
-        <section class="financial-summary">
-            <div class="summary-section">
-                <h3 class="card-title">Payment Information</h3>
-                <p>💳 Method: Credit Card (VISA)</p>
-                <p>Card: **** **** **** 1234</p>
-                <p>Authorization: <span class="highlight">SS-AUTH-5678</span></p>
-                <p class="text-muted">Processed via ShopSmart Pay</p>
+                <tr>
+                    <th>Payment Method</th>
+                    <td>[Payment Method]</td>
+                </tr>
+                <tr>
+                    <th>Estimated Delivery</th>
+                    <td>[Estimated Delivery Date]</td>
+                </tr>
+            </table>
+
+            <h3>Shipping Information</h3>
+            <table>
+                <tr>
+                    <th>Recipient</th>
+                    <td>[Customer Name]</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>[Customer Address]</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>[City]</td>
+                </tr>
+                <tr>
+                    <th>Postal Code</th>
+                    <td>[Postal Code]</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>[Customer Phone]</td>
+                </tr>
+            </table>
+
+            <h3>Order Details</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product Name 1</td>
+                        <td>2</td>
+                        <td>$50.00</td>
+                        <td>$100.00</td>
+                    </tr>
+                    <tr>
+                        <td>Product Name 2</td>
+                        <td>1</td>
+                        <td>$25.00</td>
+                        <td>$25.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary">
+                <p><strong>Subtotal:</strong> $125.00</p>
+                <p><strong>Shipping:</strong> $10.00</p>
+                <p><strong>Tax:</strong> $8.00</p>
+                <p><strong>Total:</strong> $143.00</p>
             </div>
-            
-            <div class="summary-section">
-                <h3 class="card-title">Order Totals</h3>
-                <p>Subtotal: <span class="highlight">$408.99</span></p>
-                <p>Shipping: <span class="highlight">$12.99</span></p>
-                <p>Tax (8%): <span class="highlight">$33.52</span></p>
-                <p class="total-amount">Total: $455.50</p>
+
+            <div class="coupon">
+                <p>Thank you for shopping with us! Here’s a special coupon just for you:</p>
+                <p class="coupon-code">SAVE10</p>
+                <p>Use this code at checkout on your next purchase to get 10% off!</p>
             </div>
-        </section>
-        
-        <!-- Enhanced Footer -->
-        <footer style="text-align: center; padding: var(--spacing-lg); background-color: var(--color-background-dark);">
-            <p class="text-muted">
-                Questions? Contact ShopSmart Support<br>
-                📞 1-800-SHOPSMART | ✉️ support@shopsmart.com
-            </p>
-            <p class="text-muted" style="margin-top: var(--spacing-sm);">
-                Order generated on December 15, 2024
-            </p>
-        </footer>
+
+            <a href="[Track Order Link]" class="btn">Track Your Order</a>
+
+            <div class="contact-info">
+                <p>Need help? Contact us at <a href="mailto:support@example.com">support@example.com</a> or call <strong>[Customer Support Number]</strong>.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <p><a href="[Privacy Policy Link]">Privacy Policy</a> | <a href="[Terms Link]">Terms of Service</a></p>
+        </div>
     </div>
 </body>
 </html>

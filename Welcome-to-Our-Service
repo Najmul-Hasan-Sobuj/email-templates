@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            color: #666;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Our Service!</h1>
+        </div>
+        <div class="content">
+            <p>Hi [User's Name],</p>
+
+            <p>We are thrilled to have you join our community! Thank you for choosing us. Here are some things you can do to get started:</p>
+
+            <ul>
+                <li>Explore our platform to discover its features.</li>
+                <li>Check out our <a href="#">help center</a> for tips and support.</li>
+                <li>Connect with other members in the community forum.</li>
+            </ul>
+
+            <p>Ready to dive in?</p>
+
+            <a href="[Insert Link Here]" class="btn">Get Started</a>
+
+            <p>If you have any questions or need assistance, feel free to reach out to us at <a href="mailto:support@example.com">support@example.com</a>.</p>
+
+            <p>Welcome aboard!</p>
+
+            <p>Best regards,</p>
+            <p>The [Your Company Name] Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 [Your Company Name]. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

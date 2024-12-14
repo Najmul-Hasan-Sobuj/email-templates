@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .email-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e5e5;
+        }
+        .email-header {
+            background: #2C3E50;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #2980B9;
+        }
+        .email-header img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .email-content {
+            padding: 25px;
+            background-color: #fafafa;
+            line-height: 1.6;
+            font-size: 16px;
+            color: #555;
+        }
+        .event-details, .agenda, .speakers {
+            margin-top: 30px;
+            padding: 20px;
+            background: #ecf0f1;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .event-details h3, .agenda h3, .speakers h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #2C3E50;
+        }
+        .event-details p, .agenda p, .speakers p {
+            font-size: 16px;
+            color: #34495E;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2980B9;
+            color: #fff;
+            padding: 14px 22px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1A5276;
+            transform: translateY(-2px);
+        }
+        .cta {
+            background-color: #F39C12;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .cta a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer {
+            text-align: center;
+            background: #34495E;
+            padding: 20px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .footer a {
+            color: #2980B9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .email-header h1 {
+                font-size: 24px;
+            }
+            .email-content {
+                padding: 20px;
+            }
+            .btn {
+                padding: 12px 18px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <img src="[Company Logo URL]" alt="Company Logo">
+            <h1>You're Invited to Our Exclusive Event!</h1>
+        </div>
+        <div class="email-content">
+            <p>Dear <strong>[Recipient Name]</strong>,</p>
+            <p>We are excited to invite you to our upcoming event, a perfect blend of learning, networking, and fun! We have a lot of exciting things in store, and we want you to be part of it.</p>
+
+            <div class="event-details">
+                <h3>Event Details</h3>
+                <p><strong>Date:</strong> [Event Date]</p>
+                <p><strong>Time:</strong> [Event Time]</p>
+                <p><strong>Location:</strong> [Event Location]</p>
+                <p><strong>Dress Code:</strong> [Dress Code]</p>
+            </div>
+
+            <div class="agenda">
+                <h3>Agenda</h3>
+                <p><strong>9:00 AM - 10:00 AM:</strong> Registration & Networking</p>
+                <p><strong>10:00 AM - 12:00 PM:</strong> Keynote Speaker: [Speaker Name]</p>
+                <p><strong>12:00 PM - 1:00 PM:</strong> Lunch & Networking</p>
+                <p><strong>1:00 PM - 3:00 PM:</strong> Breakout Sessions</p>
+                <p><strong>3:00 PM - 4:00 PM:</strong> Closing Remarks</p>
+            </div>
+
+            <div class="speakers">
+                <h3>Meet Our Speakers</h3>
+                <p><strong>[Speaker Name 1]:</strong> A renowned expert in [Industry/Field], sharing valuable insights on [Topic].</p>
+                <p><strong>[Speaker Name 2]:</strong> A leading voice in [Industry/Field], providing inspiration and practical advice on [Topic].</p>
+            </div>
+
+            <p>Seats are filling up quickly, so make sure you RSVP soon!</p>
+
+            <a href="[RSVP Link]" class="btn">RSVP Now</a>
+
+            <div class="cta">
+                <p>Mark your calendar and tell your friends! This is an event you won't want to miss.</p>
+                <a href="[Share Link]">Share the Event</a>
+            </div>
+
+            <p>If you have any questions, feel free to contact us at <a href="mailto:events@example.com">events@example.com</a> or call <strong>[Event Contact Number]</strong>.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 [Your Company Name]. All rights reserved.</p>
+            <p><a href="[Privacy Policy Link]">Privacy Policy</a> | <a href="[Terms Link]">Terms of Service</a></p>
+        </div>
+    </div>
+</body>
+</html>
